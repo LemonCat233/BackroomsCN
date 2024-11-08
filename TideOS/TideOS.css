@@ -33,7 +33,7 @@
 
     --topbar-bg-color: var(--transparent-color);
     --topbar-txt-color: var(--header-txt-color);
-    --topbar-hover-bg-color: var(--text-color), 0.5;
+    --topbar-hover-bg-color: var(--header-bg-color), 0.5;
     --topbar-hover-txt-color: var(--topbar-txt-color);
     --topbar-drop-bg-color: var(--header-bg-color);
     --topbar-drop-txt-color: var(--topbar-txt-color);
@@ -157,7 +157,7 @@
     background-clip: text;
     -webkit-background-clip: text;
 */
-    color: rgba(var(--header-h1-txt-color));
+    color: rgba(var(--header-h1-color));
     font-size: 1.5rem;
     font-weight: 600;
     transform: scaleY(0.9);
@@ -176,6 +176,11 @@
     position: relative;
     width: 100%;
     height: var(--header-height);
+}
+
+/* 电脑端顶栏：移动端顶栏 */
+#top-bar .mibile-top-bar {
+    display: none;
 }
 
 /* 电脑端顶栏 */
