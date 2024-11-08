@@ -19,35 +19,57 @@
     
     /* DIY colors [全是RGB] */
     --main-color: 6, 9, 27;
-    --transparent-color: 0, 0, 0;
+    --accent-color: 240, 214, 148;
+    --black-color: 0, 0, 0;
+    
     --text-color: 255, 255, 255;
-    --title-color: 223, 226, 242;
-
-    /* Element colors [全是RGBA，没写透明度就是引用那个有] */
+    --header-h1-color: 223, 226, 242;
+    
+    /* Element colors [全是RGBA，没写透明度就是引用的那个有] */
+    --transparent-color: 0, 0, 0, 0;
+    
     --header-bg-color: var(--main-color), 0.775;
     --header-txt-color: var(--text-color), 1;
 
+    --topbar-bg-color: var(--transparent-color);
+    --topbar-txt-color: var(--header-txt-color);
     --topbar-hover-bg-color: var(--text-color), 0.5;
     --topbar-hover-txt-color: var(--topbar-txt-color);
     --topbar-drop-bg-color: var(--header-bg-color);
     --topbar-drop-txt-color: var(--topbar-txt-color);
-    --topbar-drop-border-color: 223, 226, 242, 0.075;
+    --topbar-drop-border-color: var(--header-h1-color), 0.075;
     
     --search-bg-color: var(--topbar-bg-color);
     --search-hover-bg-color: var(--topbar-hover-bg-color);
 
     --user-bg-color: var(--topbar-bg-color);
-    --user-icon-border-color: var(--header-h1-txt-color);
+    --user-icon-border-color: var(--header-h1-color);
     --user-hover-bg-color: var(--topbar-hover-bg-color);
     --user-hover-icon-border-color: var(--user-icon-border-color);
-    --user-drop-bg-color: 0, 0, 0, 0.8;
+    --user-drop-bg-color: var(--black-color), 0.8;
     --user-drop-txt-color: var(--topbar-txt-color);
     --user-hover-drop-bg-color: var(--accent-color), 1;
     --user-hover-drop-txt-color: var(--user-drop-bg-color);
     
     
-    /* DISTANCES */
+    /* DISTANCES [只放了常用的] */
     --header-height: 2.5rem;
+    --header-h1-padding: 5rem;
+    --header-backdrop-blur: 2px;
+    
+    --topbar-height: var(--header-height);
+    --topbar-height-on-mobile: calc(var(--header-height) * 1);
+
+    --logo-image: url("https://brsandbox-pro.wikidot.com/local--files/secret:origin-beach/TheBackroomsCN_logo.svg");
+    /* 这两个变量的数值比（Y：X）尽量与（header-height：header-h1-padding）的比值保持一致 */
+    --logo-paddingY: calc(var(--header-height) * 0.1);
+    --logo-paddingX: calc(var(--header-h1-padding) * 0.1);
+
+    --user-icon-padding: 0.2rem;
+    --user-drop-width: 18rem;
+    --user-drop-height: 9rem;
+    --user-drop-column-width: calc(var(--user-drop-width) * 1/2);
+    --user-drop-row-height: calc(var(--user-drop-height) * 1/3);
 }
 
 
