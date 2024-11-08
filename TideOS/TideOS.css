@@ -59,12 +59,11 @@
     
     --topbar-height: var(--header-height);
     --topbar-height-on-mobile: calc(var(--header-height) * 1);
-
+    
     --logo-image: url("https://brsandbox-pro.wikidot.com/local--files/secret:origin-beach/TheBackroomsCN_logo.svg");
-    /* 这两个变量的数值比（Y：X）尽量与（header-height：header-h1-padding）的比值保持一致 */
     --logo-paddingY: calc(var(--header-height) * 0.1);
     --logo-paddingX: calc(var(--header-h1-padding) * 0.1);
-
+    
     --user-icon-padding: 0.2rem;
     --user-drop-width: 18rem;
     --user-drop-height: 9rem;
@@ -75,5 +74,98 @@
 
 /* ———— 2. 版头 ———— */
 #header {
-
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: calc(var(--header-h1-padding) * 2) auto var(--header-height) var(--header-height);
+    grid-template-areas: "h1 top-bar search user";
+    
+    position: fixed;
+    width: 100%;
+    height: var(--header-height);
+    background-color: rgba(var(--header-bg-color));
+    backdrop-filter: blur(var(--header-backdrop-blur));
+    -webkit-backdrop-filter: blur(var(--header-backdrop-blur));
 }
+
+#header h1 {
+    display: block;
+    grid-area: h1;
+
+    position: relative;
+    width: 100%;
+    height: var(--header-height);
+    box-sizing: border-box;
+}
+
+#header h1 a {
+    display: inline-flex;
+    justify-content: start;
+    align-items: center;
+
+    position: relative;
+    width: 100%;
+    height: var(--header-height);
+    /* [标记点01] */
+    /* 这个padding决定了左上角标题文字的位置 */
+    padding-left: calc(var(--header-h1-padding) - (var(--header-h1-padding) - var(--logo-paddingX)) * 0.3);
+    box-sizing: border-box;
+}
+
+#header h1 a span {
+    position: relative;
+    height: var(--header-height);
+    font-size: 0;
+    font-family: var(--header-h1-font);
+    pointer-events: none;
+}
+
+/* 版头：LOGO徽标 */
+#header h1 a span::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: calc(var(--logo-paddingY) * 1/2);
+    /* [标记点02] */
+    /* 这个left决定了LOGO徽标相对span向左偏移了多少 */
+    left: calc(var(--header-h1-padding) * -1 + var(--logo-paddingX) + (var(--header-h1-padding) - var(--logo-paddingX)) * 0.3);
+    width: calc(var(--header-h1-padding) - var(--logo-paddingX));
+    height: calc(var(--header-height) - var(--logo-paddingY));
+    background-image: url("https://brsandbox-pro.wikidot.com/local--files/secret:origin-beach/TheBackroomsCN_logo.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    /* [解析点01：标记点01 和 标记点02 的 "*0.3" 来自这里的 "30%" ] */
+    -webkit-mask-image: linear-gradient(to right, Black 0%, rgb(0, 0, 0, 0.5) 30%, transparent);
+    mask-image: linear-gradient(to right, Black 0%, rgb(0, 0, 0, 0.5) 30%, transparent);
+}
+
+/* 版头：左上角标题文字 */
+#header h1 a span::after {
+    content:"TideOS";
+    display: inline-flex;
+    justify-content: start;
+    align-items: center;
+
+    position: absolute;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: var(--header-height);
+/* 
+    color: transparent;
+    background-image: linear-gradient(to left, rgb(223, 226, 242), White);
+    background-clip: text;
+    -webkit-background-clip: text;
+*/
+    color: rgba(var(--header-h1-txt-color));
+    font-size: 1.5rem;
+    font-weight: 600;
+    transform: scaleY(0.9);
+}
+
+#header h2 {
+    display: none;
+}
+
+
+/* ———— 3. 顶栏 ———— */
