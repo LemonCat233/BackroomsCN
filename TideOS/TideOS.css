@@ -55,7 +55,7 @@
     /* DISTANCES [只放了常用的] */
     --header-height: 2.5rem;
     --header-h1-padding: 5rem;
-    --header-backdrop-blur: 2px;
+    --header-backdrop-blur: blur(2px);
     
     --topbar-height: var(--header-height);
     --topbar-height-on-mobile: calc(var(--header-height) * 1);
@@ -83,8 +83,8 @@
     width: 100%;
     height: var(--header-height);
     background-color: rgba(var(--header-bg-color));
-    backdrop-filter: blur(var(--header-backdrop-blur));
-    -webkit-backdrop-filter: blur(var(--header-backdrop-blur));
+    backdrop-filter: var(--header-backdrop-blur);
+    -webkit-backdrop-filter: var(--header-backdrop-blur);
 }
 
 #header h1 {
@@ -169,3 +169,99 @@
 
 
 /* ———— 3. 顶栏 ———— */
+#top-bar {
+    display: block;
+    gird-area: top-bar;
+
+    position: relative;
+    width: 100%;
+    height: var(--header-height);
+}
+
+/* 电脑端顶栏 */
+#top-bar .top-bar {
+    display: inline-flex;
+    justify-content: start;
+    align-items: center;
+
+    position: relative;
+    width: 100%;
+    height: var(--header-height);
+}
+
+/* 电脑端顶栏：一级菜单 */
+#top-bar .top-bar > ul {
+    display: inline-flex;
+    justify-content: start;
+    align-items: center;
+
+    position: relative;
+    height: var(--header-height);
+}
+
+#top-bar .top-bar > ul > li {
+    position: relative;
+    margin: 0;
+    height: var(--header-height);
+}
+
+#top-bar .top-bar > ul > li > a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    width: 100%;
+    height: var(--header-height);
+    padding: 0 1rem;
+    box-sizing: border-box;
+    background-color: rgba(var(--topbar-bg-color));
+    color: rgba(var(--topbar-txt-color)) !important;
+    font-size: 0.75rem;
+}
+
+#top-bar .top-bar > ul > li:is(.sfhover, :hover, :focus, :active) > a {
+    background-color: rgba(var(--topbar-hover-bg-color));
+    color: rgba(var(--topbar-hover-txt-color));
+    text-decoration: none;
+}
+
+/* 电脑端顶栏：二级菜单 */
+#top-bar .top-bar > ul > li > ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(var(--topbar-drop-bg-color));
+    border: none;
+    border-left: 0.5rem solid rgba(var(--topbar-hover-bg-color));
+    backdrop-filter: var(--header-backdrop-blur);
+    -webkit-backdrop-filter: var(--header-backdrop-blur);
+}
+
+#top-bar .top-bar > ul > li > ul > li {
+    position: relative;
+    height: var(--header-height);
+}
+
+#top-bar .top-bar > ul > li > ul > li > a {
+    display: inline-flex;
+    justify-content: start;
+    align-items: center;
+
+    width: 100%;
+    height: var(--header-height);
+    padding: 0 1rem 0 0.5rem;
+    box-sizing: border-box;
+    background-color: transparent;
+    color: rgba(var(--topbar-drop-txt-color));
+    border-top: 1px solid rgba(var(--topbar-drop-border-color));
+}
+
+#top-bar .top-bar > ul > li > ul > li:is(.sfhover, :hover, :focus, :active) > a {
+    background-color: rgba(var(--topbar-drop-bg-color));
+    color: rgba(var(--topbar-drop-txt-color));
+    text-decoration: none;
+}
+
+
+/* ———— 4. 搜索 ———— */
