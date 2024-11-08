@@ -130,7 +130,7 @@
     left: calc(var(--header-h1-padding) * -1 + var(--logo-paddingX) + (var(--header-h1-padding) - var(--logo-paddingX)) * 0.3);
     width: calc(var(--header-h1-padding) - var(--logo-paddingX));
     height: calc(var(--header-height) - var(--logo-paddingY));
-    background-image: url("https://brsandbox-pro.wikidot.com/local--files/secret:origin-beach/TheBackroomsCN_logo.svg");
+    background-image: var(--logo-image);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
