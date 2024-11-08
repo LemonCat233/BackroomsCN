@@ -2,3 +2,17 @@
     TideOS Theme
     by LemonCat233
 */
+
+
+/* ———— 0. 引入 ———— */
+/* 无衬线 */
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+/* 有衬线 */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+
+
+/* ———— 1. 全局 ———— */
+:root {
+    font-size: 15px;
+    --header-h1-font: "Red Hat Display", sans-serif;
+}
