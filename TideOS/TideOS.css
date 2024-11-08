@@ -394,11 +394,12 @@
     border: none;
     backdrop-filter: var(--header-backdrop-blur);
     -webkit-backdrop-filter: var(--header-backdrop-blur);
-    pointer-events: auto;
+    pointer-events: none;
     opacity: 0;
 }
 
 #login-status:is(:hover, :focus, :active) #account-options {
+    pointer-events: auto;
     opacity: 1;
 }
 
