@@ -265,3 +265,47 @@
 
 
 /* ———— 4. 搜索 ———— */
+#header #search-top-box {
+    display: block;
+    grid-area: search;
+
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+}
+
+/* 搜索栏：html表单 */
+#header #search-top-box #search-top-box-form {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: var(--header-height);
+}
+
+/* 搜索栏：输入框 */
+#header #search-top-box #search-top-box-form #search-top-box-input {
+    display: none;
+}
+
+/* 搜索栏："搜索"按钮 */
+#header #search-top-box #search-top-box-form input.button.btn {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: var(--header-height);
+    margin: 0;
+    padding: 0;
+    background-color: rgba(var(--search-bg-color));
+    border: none;
+    border-radius: 0;
+    font-size: 0;
+}
+
+#header #search-top-box:is(:hover, :focus, :active) #search-top-box-form input.button.btn {
+    background-color: rgba(var(--search-hover-bg-color));
+}
+
+
+/* ———— 5. 用户 ———— */
