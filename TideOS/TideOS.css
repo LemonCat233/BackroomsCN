@@ -309,3 +309,125 @@
 
 
 /* ———— 5. 用户 ———— */
+#login-status {
+    display: block;
+    grid-area: user;
+
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: var(--header-height);
+    background-color: rgba(var(--user-bg-color));
+    font-size: 0;
+    z-index: 99;
+}
+
+#login-status:hover {
+    background-color: rgba(var(--user-hover-bg-color));
+}
+
+#login-status .printuser {
+    position: relative;
+    width: var(--header-height);
+    height: var(--header-height);
+    /* 移除默认显示的用户名 */
+    font-size: 0;
+}
+
+/* 用户：个人信息弹窗链接 */
+#login-status .printuser > a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--header-height);
+    height: var(--header-height);
+    box-sizing: border-box;
+    padding: var(--user-icon-padding);
+    background-color: transparent;
+}
+
+#login-status:hover .printuser > a {
+    background-color: transparent;
+}
+
+/* 用户：个人头像 */
+#login-status .printuser > a > img.small {
+    padding: 0;
+    width: calc(var(--header-height) - var(--user-icon-padding) * 2);
+    height: calc(var(--header-height) - var(--user-icon-padding) * 2);
+    box-sizing: border-box;
+    border: 2px solid rgba(var(--user-icon-border-color));
+    border-radius: 50%;
+    /* 移除Karma值 */
+    background-image: none !important;
+}
+
+#login-status:hover .printuser > a > img.small {
+    border: 2px solid rgba(var(--user-hover-icon-border-color));
+}
+
+/* 用户：“▼”按钮 */
+#login-status #account-topbutton {
+    display: none;
+}
+
+/* 用户：“我的账户”链接 */
+#login-status #my-account {
+    display: none;
+}
+
+/* 用户：账号信息菜单 */
+#login-status #account-options {
+    display: block !important;
+    position: absolute;
+    top: var(--header-height);
+    right: 0;
+    width: var(--user-drop-width);
+    height: var(--user-drop-height);
+    background-color: rgba(var(--user-drop-bg-color));
+    border: none;
+    backdrop-filter: var(--header-backdrop-blur);
+    -webkit-backdrop-filter: var(--header-backdrop-blur);
+    pointer-events: auto;
+    opacity: 0;
+}
+
+#login-status:is(:hover, :focus, :active) #account-options {
+    opacity: 1;
+}
+
+#login-status:is(:hover, :focus, :active) #account-options ul {
+    display: grid;
+    grid-template-rows: var(--user-drop-row-height) var(--user-drop-row-height) var(--user-drop-row-height);
+    grid-template-columns: var(--user-drop-column-width) var(--user-drop-column-width);
+    width: var(--user-drop-width);
+    height: var(--user-drop-height);
+}
+
+#login-status:is(:hover, :focus, :active) #account-options ul li {
+    width: var(--user-drop-column-width);
+    height: var(--user-drop-row-height);
+    margin: 0;
+    padding: 0;
+}
+
+#login-status:is(:hover, :focus, :active) #account-options ul li a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    width: var(--user-drop-column-width);
+    height: var(--user-drop-row-height);
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    color: rgba(var(--user-drop-txt-color));
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+#login-status:is(:hover, :focus, :active) #account-options ul li:is(:hover, :focus, :active) a {
+    background-color: rgba(var(--user-hover-drop-bg-color));
+    color: rgba(var(--user-hover-drop-txt-color));
+}
