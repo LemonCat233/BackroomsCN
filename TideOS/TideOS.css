@@ -33,7 +33,7 @@
 
     --topbar-bg-color: var(--transparent-color);
     --topbar-txt-color: var(--header-txt-color);
-    --topbar-hover-bg-color: var(--header-bg-color), 0.5;
+    --topbar-hover-bg-color: var(--main-color), 0.5;
     --topbar-hover-txt-color: var(--topbar-txt-color);
     --topbar-drop-bg-color: var(--header-bg-color);
     --topbar-drop-txt-color: var(--topbar-txt-color);
