@@ -143,7 +143,7 @@
 
 /* 版头：左上角标题文字 */
 #header h1 a span::after {
-    content:"TideOS";
+    content: "TideOS";
     display: inline-flex;
     justify-content: start;
     align-items: center;
