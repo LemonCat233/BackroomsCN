@@ -60,7 +60,7 @@
     --topbar-height: var(--header-height);
     --topbar-height-on-mobile: calc(var(--header-height) * 1);
     
-    --logo-image: url("https://brsandbox-pro.wikidot.com/local--files/secret:origin-beach/TheBackroomsCN_logo.svg");
+    --logo-image: url("../Image/logo_nomargin.svg");
     --logo-paddingY: calc(var(--header-height) * 0.1);
     --logo-paddingX: calc(var(--header-h1-padding) * 0.1);
     
